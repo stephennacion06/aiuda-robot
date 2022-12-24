@@ -1,0 +1,113 @@
+body {
+    background: #1b1717;
+    font-family: 'Roboto', sans-serif;
+}
+.login-key {
+    height: 100px;
+    font-size: 80px;
+    line-height: 100px;
+    background: -webkit-linear-gradient(#1b1717, #eeebdd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.aiuda-logo{
+    float: center;
+    margin-top: 4px;
+    margin-right: 50px;
+    align-content: center;
+}
+
+.network-icon{
+    float:left;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#network_status{
+    float:left;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: left;
+    color: #810000;
+}
+
+.btn-manual
+{
+    background-color: #810000
+}
+
+.btn-auto
+{
+    background-color: #810000
+}
+
+
+@media all and (max-height: 568px) and (min-height: 0px) {
+    .login-form {
+        margin-top: auto;
+        text-align: left;
+        padding-top: 100px;
+    }
+    
+    .login-box {
+        height: 568px;
+        background: #eeebdd;
+        text-align: center;
+        box-shadow: 0 3px 6px rgba(51, 0, 0, 0.938), 0 3px 6px rgba(51, 0, 0, 0.938);
+    }
+
+}
+
+@media all and (max-height: 667px) and (min-height: 569px) {
+    .login-form {
+        margin-top: auto;
+        text-align: left;
+        padding-top: 100px;
+    }
+    
+    .login-box {
+        height: 667px;
+        background: #eeebdd;
+        text-align: center;
+        box-shadow: 0 3px 6px rgba(51, 0, 0, 0.938), 0 3px 6px rgba(51, 0, 0, 0.938);
+    }
+
+}
+
+@media all and (max-height: 667px) and (min-height: 569px) {
+    .login-form {
+        margin-top: auto;
+        text-align: left;
+        padding-top: 100px;
+    }
+    
+    .login-box {
+        height: 667px;
+        background: #eeebdd;
+        text-align: center;
+        box-shadow: 0 3px 6px rgba(51, 0, 0, 0.938), 0 3px 6px rgba(51, 0, 0, 0.938);
+    }
+
+}
+
+@media all and (min-height: 668px) {
+    .login-form {
+        margin-top: auto;
+        text-align: left;
+        padding-top: 100px;
+    }
+    
+    .login-box {
+        padding-top: 10px;
+        height: 668px;
+        background: #eeebdd;
+        text-align: center;
+        box-shadow: 0 3px 6px rgba(51, 0, 0, 0.938), 0 3px 6px rgba(51, 0, 0, 0.938);
+    }
+
+}
+
+
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+     <include file="$(find orb_slam2_ros)/ros/launch/calib.launch" />
+     <!-- <include file="$(find hector_slam_launch)/launch/tutorial.launch" /> -->
+     <include file="$(find hector_slam_launch)/launch/mapping_box.launch" />
+     
+     <include file="$(find pointcloud_to_laserscan)/launch/no_camera.launch" />
+     
+     <node pkg="set_point" name="set_point" type="2d_estimate.py" /> 
+
+     <include file="$(find postal_goal_ros)/launch/videoplay.launch" />
+
+
+     <!-- <arg name="map_file" default="/home/aiudabot/orb_catkin_ws/mymap.yaml"/> -->
+     
+     
+     <!-- Run the map server -->
+     <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" /> -->
+     
+     
+
+</launch>

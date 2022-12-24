@@ -1,0 +1,32 @@
+<launch>
+
+	<!-- VIDEO SOURCE -->
+	<arg name="input" default="file:///home/aiudabot/input.mp4"/>
+	<arg name="input_width" default="0"/>
+	<arg name="input_height" default="0"/>
+	<arg name="input_codec" default="h264"/>
+	<arg name="input_loop" default="0"/>
+
+	<include file="$(find ros_deep_learning)/launch/video_source.ros1.launch">
+		<arg name="input" value="$(arg input)"/>
+		<arg name="input_width" value="$(arg input_width)"/>
+		<arg name="input_height" value="$(arg input_height)"/>
+		<arg name="input_codec" value="$(arg input_codec)"/>
+		<arg name="input_loop" value="$(arg input_loop)"/>
+	</include>
+
+	<!-- VIDEO OUTPUT -->
+	<arg name="output" default="--headless"/>
+	<arg name="output_codec" default="h264"/>
+	<arg name="output_bitrate" default="0"/>
+
+	<include file="$(find ros_deep_learning)/launch/video_output.ros1.launch">
+		<arg name="topic" value="/video_source/raw"/>
+		<arg name="output" value="$(arg output)"/>
+		<arg name="output_codec" value="$(arg output_codec)"/>
+		<arg name="output_bitrate" value="$(arg output_bitrate)"/>
+	</include>
+
+	<include file="$(find orb_slam2_ros)/ros/launch/calib.launch" /> 
+	
+</launch>

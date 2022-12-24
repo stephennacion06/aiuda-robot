@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- AIUDA CSS-->
+    <link rel="stylesheet" type="text/css" href="static/css/automated.css">
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <title>AIUDA REMOTE CONTROL</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2 outer-container  move-back"></div>
+            <div class="col-lg-6 col-md-8 login-box move-back">
+
+                <div class="header">
+                <h6 id=network_status >offline</h6>
+                    <img class=network-icon src="static/icons/offline.png" alt="offline icon" width="20" height="20">
+                    <img class=aiuda-logo src="static/icons/aiuda_logo.png" alt="AIUDA logo" width="75" height="75">
+                    <a href="{{ url_for('menu') }}" style="z-index: 1;" 
+                    class="btn btn-secondary btn-sm aiuda-back-button" role="button" aria-pressed="true">GO BACK</a>
+                  </div>
+                <div class="button-panel">
+                        <a href="{{ url_for('show_location') }}" style="z-index: 1;" 
+                        class="btn btn-secondary btn-sm location-button" role="button" aria-pressed="true">VIEW LOCATION</a>
+                        <h5>Brgy. 743 Ayuda </h5>
+                        <h6>{{status_delivery}}</h6>
+                </div>
+                <form method="POST" action="#">
+                <div class="aiuda-table-container border table-responsive smooth-scroll">
+                    
+                        <table class="table table-bordered"style="width:100%">
+                            <thead class="thead-color">
+                            <tr>
+                              <th>Name</th>
+                              <th>Status</th>
+                            </tr>
+                            </thead>
+                        {%for i in range(0, length)%}
+                        <tr class='{{status_list[i]}}'>
+                            <td class='name-column'> {{name_list[i]}} </td>
+                            <td class='status-column'>{{status_list[i]}}</td>
+                        </tr>    
+                        {%endfor%}
+                        </table>
+
+                    
+                    
+                    
+                </div>
+                <button type="submit"  class="btn btn-secondary btn-lg btn-block btn-start">FINISH DELIVERY</button>
+              </form>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+        </div>
+
+    <!-- Optional JavaScript -->
+    <!-- CONTROL BUTTON JAVASCRIPT -->
+    <script>
+      window.setInterval('refresh()', 5000); 	
+      // Call a function every 10000 milliseconds 
+      // (OR 10 seconds).
+  
+      // Refresh or reload page.
+      function refresh() {
+          window .location.reload();
+      }
+    </script>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<script>
+    function goBack() {
+      window.history.back();
+    }
+</script>
+

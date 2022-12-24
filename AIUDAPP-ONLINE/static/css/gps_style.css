@@ -1,0 +1,17 @@
+body {
+    margin:5px;
+    padding:5px;
+    padding-top:5px;
+    padding-left:2px;
+}
+
+h1
+{
+    text-align:center;
+    color:black;
+}
+
+#map
+{
+    border:10px solid gray;
+}

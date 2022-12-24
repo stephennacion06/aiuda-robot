@@ -1,0 +1,142 @@
+body {
+    background: #1b1717;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+
+}
+
+
+.aiuda-logo{
+    float: right;
+    margin-top: 4px;
+    margin-left: 50px;
+    align-content: right;
+    
+}
+
+
+.network-icon{
+    float:right;
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+#network_status{
+    float:right;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: #810000;
+}
+
+.aiuda-back-button{
+    float:left;
+    margin-top: 10px;
+    margin-right: 10px;
+    background:  #810000;
+}
+
+.header{
+    height: 20vh;
+}
+
+.button-panel{
+    height: 10vh;
+    position: relative;
+}
+
+.location-button{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background:  #810000;
+}
+
+
+.video-panel{
+    height: 40vh;
+    background-color:  #1b1717;
+    overflow-y:auto;
+}
+
+.live-feed{
+  object-fit: cover;
+ 
+}
+
+.login-box {
+    height: 100vh;
+    background: #eeebdd;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(51, 0, 0, 0.938), 0 3px 6px rgba(51, 0, 0, 0.938);
+}
+
+.control-panel{
+    height: 30vh;
+    padding-top: 10px;
+}
+
+/* CSS BUTTONS */
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+
+.keys {
+  font-family: 'Lato', sans-serif;    
+  text-align: center;
+  width: 400px;
+  height: 100px;
+  margin: auto;
+}
+
+.arr {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background: #810000;
+  color: #eeebdd;
+  font-size: 50px;
+  border-right: 10px solid darken(grey, 20);
+  border-bottom: 10px solid darken(grey, 20);
+  border-left: 10px solid darken(grey, 15);
+  border-top: 10px solid darken(grey, 10);  
+  display: inline-block;
+  margin: 5px;
+  transition: all .05s linear;
+ 
+}
+
+#up, #left, #right, #down, #stop{
+  color:#eeebdd;
+  z-index: 1;
+}
+
+.fa:active {
+  border-bottom: 8px solid darken(grey, 20);
+  text-shadow: 0 0 10px white, 0 0 10px white, 0 0 20px white;    
+  transform: translate(0, 2px);
+}
+
+.far:active {
+  border-bottom: 8px solid darken(grey, 20);
+  text-shadow: 0 0 10px white, 0 0 10px white, 0 0 20px white;    
+  transform: translate(0, 2px);
+}
+
+.stop-button{
+  float:left;
+  position: absolute;
+  left: 10%;
+
+}
+
+h3{
+  float:left;
+  position: absolute;
+  color: #1b1717;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+
+

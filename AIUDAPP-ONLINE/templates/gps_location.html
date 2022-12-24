@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- AIUDA CSS-->
+    <link rel="stylesheet" type="text/css" href="static/css/remote_style.css">
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+
+      #map {
+          height: 100%;
+          width: 100%;
+      }
+
+    </style>
+    <title>AIUDA ROBOT LOCATION</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2 outer-container  move-back"></div>
+            <div class="col-lg-6 col-md-8 login-box move-back">
+
+                <div class="header">
+                <h6 id=network_status >offline</h6>
+                    <img class=network-icon src="static/icons/offline.png" alt="offline icon" width="20" height="20">
+                    <img class=aiuda-logo src="static/icons/aiuda_logo.png" alt="AIUDA logo" width="75" height="75">
+                    <a href="{{ url_for('menu') }}" style="z-index: 1;" 
+                    class="btn btn-secondary btn-sm aiuda-back-button" role="button" aria-pressed="true">GO BACK</a>
+                </div>
+                <div class="button-panel">
+                        <h3 id="indicator">AIUDA ROBOT GPS LOCATION</h2>
+                </div>
+                <div id="map-container" class="video-panel">
+                  <div id="map"></div>
+                </div>
+
+
+                
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+        </div>
+
+    <!-- Optional JavaScript -->
+    <!-- CONTROL BUTTON JAVASCRIPT -->
+    <script>
+
+        function initMap(){
+      var location = {lat: {{gps_coordinates[0]}}, lng: {{gps_coordinates[1]}} };
+      var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 20,
+          center: location
+      });
+      var marker = new google.maps.Marker({
+          position: location,
+          map: map
+      })
+  }
+    </script>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwKWRGCquRFJ2SvOA8ySv-uixzQwajhbo&callback=initMap&libraries=&v=weekly"
+  async
+  ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<script>
+    function goBack() {
+      window.history.back();
+    }
+</script>
+

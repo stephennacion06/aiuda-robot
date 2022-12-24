@@ -1,0 +1,140 @@
+body {
+    background: #1b1717;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-box {
+    height: 100vh;
+    background: #eeebdd;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(51, 0, 0, 0.938), 0 3px 6px rgba(51, 0, 0, 0.938);
+}
+
+.login-key {
+    text-align: center;
+    height: 40vh;
+    font-size: 80px;
+    line-height: 100px;
+    background: -webkit-linear-gradient(#1b1717, #eeebdd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.aiuda-logo{
+    float: center;
+    margin-top: 4px;
+    margin-right: 50px;
+    align-content: center;
+}
+
+.network-icon{
+    float:left;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#network_status{
+    float:left;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: left;
+    color: #810000;
+}
+
+.login-form {
+    text-align: left;
+}
+
+input[type=text] {
+    background-color: #eeebdd;
+    border: none;
+    border-bottom: 2px solid #ce1212;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #ce1212;
+}
+
+input[type=password] {
+    background-color: #eeebdd;
+    border: none;
+    border-bottom: 2px solid #ce1212;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #ce1212;
+}
+
+.form-group {
+    outline: 0px;
+}
+form{
+    position:absolute;
+    width:100%;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #810000;
+    outline: 0;
+    background-color: #eeebdd;
+    color: #ce1212;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.form-control-label {
+    font-size: 10px;
+    color: #6C6C6C;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-outline-primary {
+    border-color: #ce1212;
+    color: #810000;
+    border-radius: 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn-outline-primary:hover {
+    background-color: #ce1212;
+    right: 0px;
+}
+
+.login-btm {
+    float: right;
+}
+
+.login-button {
+    padding-right: 0px;
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.login-text {
+    text-align: left;
+    padding-left: 0px;
+    color: #A2A4A4;
+}
+
+.loginbttm {
+    padding: 0px;
+}
