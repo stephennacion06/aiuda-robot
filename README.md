@@ -7,6 +7,9 @@ Note: This uses Remmina so this is only applicable from linux to linux remote ac
 
 ## Running AIUDA Software
 ### Video Process
+'''
 roslaunch deployment_video.launch
-\n Note: For debugging change <arg name="input" default="csi://0"/> into <arg name="input" default="file:///home/aiudabot/AIUDA_PACKAGES/barangay_video.mp4"/>
-Note: run rviz and add display image then change topic to video/source/raw
+Note: 
+For debugging change <arg name="input" default="csi://0"/> into <arg name="input" default="file:///home/aiudabot/AIUDA_PACKAGES/barangay_video.mp4"/>
+then run rviz and add display image then change topic to video/source/raw
+'''
