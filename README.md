@@ -12,7 +12,5 @@ Note: This uses Remmina so this is only applicable from linux to linux remote ac
 roslaunch deployment_video.launch
 ```
 Note: 
-For debugging change <arg name="input" default="csi://0"/> into <arg name="input" default="file:///home/aiudabot/AIUDA_PACKAGES/barangay_video.mp4"/>
-
-then run rviz and add display image then change topic to video/source/raw
+For debugging change <arg name="input" default="csi://0"/> into <arg name="input" default="file:///home/aiudabot/AIUDA_PACKAGES/barangay_video.mp4"/> then run rviz and add display image then change topic to video/source/raw
 
