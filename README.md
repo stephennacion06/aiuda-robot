@@ -305,7 +305,8 @@ Official repository for Aiuda Robot Project
 <br> 3. Install ORBSLAM2 from  https://github.com/raulmur/ORB_SLAM2
 <br> 4. Install jetson-inference from https://github.com/dusty-nv/jetson-inference and guide from https://github.com/dusty-nv/jetson-inference/blob/master/docs/segnet-console-2.md
 <br> 5. Install AIUDA python packages "pip3 install -r requirements_aiuda.txt"
-<br> 6. For AIUDA body copy all libraries found in Arduino_Library into  /home/aiudabot/Arduino/libraries and use PID_AIUDA_BODY.ino 
+<br> 6. Update deeploarning model to fcn-resnet18-cityscapes-1024x512 in AIUDA_PACKAGES/ros_workspace/src/ros_deep_learning/launch/segnet.ros1.launch
+<br> 7. For AIUDA body copy all libraries found in Arduino_Library into  /home/aiudabot/Arduino/libraries and use PID_AIUDA_BODY.ino 
 
 
 ## Remote Access
@@ -321,3 +322,30 @@ roslaunch deployment_video.launch
 Note: 
 For debugging change `<arg name="input" default="csi://0"/> into <arg name="input" default="file:///home/aiudabot/AIUDA_PACKAGES/barangay_video.mp4"/>` then run rviz and add display image then change topic to video/source/raw
 
+### Mapping Process - New Created File - Generation of .bin and 
+Start Video launch - either camera or recorded video
+```
+roslaunch deployment_video.launch
+```
+Start Orb-Slam, Image Segmentation, Throttle Control, Video Web Server
+```
+roslaunch aiuda_mapping_orbslam_new_map.launch
+```
+Start Orb-Slam, Image Segmentation, Throttle Control, Video Web Server
+```
+roslaunch aiuda_mapping_orbslam_new_map.launch
+```
+Hector 
+```
+roslaunch aiuda_mapping_orbslam_new_map.launch
+```
+
+### Mapping Process -  Loading Created Map - Generation of .bin and 
+Start Video launch - either camera or recorded video
+```
+roslaunch deployment_video.launch
+```
+Start Video Orb-Slam Mapping - either camera or recorded video
+```
+roslaunch deployment_video.launch
+```
