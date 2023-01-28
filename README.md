@@ -302,6 +302,10 @@ Official repository for Aiuda Robot Project
 <br>xacro /opt/ros/melodic/share/xacro
 <br>xmlrpcpp /opt/ros/melodic/share/xmlrpcpp
 </details>
+3. Install ORBSLAM2 from  https://github.com/raulmur/ORB_SLAM2
+4. Install jetson-inference from https://github.com/dusty-nv/jetson-inference and guide from https://github.com/dusty-nv/jetson-inference/blob/master/docs/segnet-console-2.md
+5. Install AIUDA python packages "pip3 install -r requirements_aiuda.txt"
+6. For AIUDA body copy all libraries found in Arduino_Library into  /home/aiudabot/Arduino/libraries and use PID_AIUDA_BODY.ino 
 
 
 ## Remote Access
