@@ -315,6 +315,11 @@ Follow this tutorial https://medium.com/@bharathsudharsan023/jetson-nano-remote-
 Note: This uses Remmina so this is only applicable from linux to linux remote access
 
 ## Running AIUDA Software
+### Running AIUDA-SOFTWARE App Server
+```
+roslaunch deployment_video.launch
+```
+
 ### Video Input
 ```
 roslaunch deployment_video.launch
@@ -322,7 +327,7 @@ roslaunch deployment_video.launch
 Note: 
 For debugging change `<arg name="input" default="csi://0"/> into <arg name="input" default="file:///home/aiudabot/AIUDA_PACKAGES/barangay_video.mp4"/>` then run rviz and add display image then change topic to video/source/raw
 
-### Mapping Process - New Created File - Generation of .bin and 
+### Mapping Process - New Created File - Generation of .bin, .pgm and .yaml
 Start Video launch - either camera or recorded video
 ```
 roslaunch deployment_video.launch
@@ -331,21 +336,41 @@ Start Orb-Slam, Image Segmentation, Throttle Control, Video Web Server
 ```
 roslaunch aiuda_mapping_orbslam_new_map.launch
 ```
-Start Orb-Slam, Image Segmentation, Throttle Control, Video Web Server
+<br>Note: Start Scanning the environment 3-5 laps and check in mobile phone if the environment is being scanned 
+<br> If the result of ORB-SLAM has accurate localization, save generated binary file by running the command
+```
+rosservice list (to check if /orb_slam2_mono/save_map is available)
+rosservice call /orb_slam2_mono/save_map -f /home/aiudabot/AIUDA_PACKAGES/smith_map.bin
+```
+<br> After orb-slam scanning, run Hector SLAM. Repeat scanning upto 3-5 laps.
 ```
 roslaunch aiuda_mapping_orbslam_new_map.launch
 ```
-Hector 
+Save the generated map 
 ```
-roslaunch aiuda_mapping_orbslam_new_map.launch
+rosrun map_server map_saver -f mymap
+```
+<br> The all generates file must be transfer to this location
+```
+/home/aiudabot/AIUDA_PACKAGES/smith_map.bin - for binary file
+/home/aiudabot/orb_catkin_ws/mymap.yaml - for yaml file
+/home/aiudabot/orb_catkin_ws/mymap.pgm - for generated map image
+NOTE: AIUDA_PACKAGES folder is just a backup folder for all packages used in AIUDA project
 ```
 
-### Mapping Process -  Loading Created Map - Generation of .bin and 
+### Mapping Process -  Improving saved ORB-SLAM Map
 Start Video launch - either camera or recorded video
 ```
 roslaunch deployment_video.launch
 ```
-Start Video Orb-Slam Mapping - either camera or recorded video
+Start Orb-Slam, Image Segmentation, Throttle Control, Video Web Server
 ```
-roslaunch deployment_video.launch
+roslaunch aiuda_mapping_orbslam_load_map.launch
+```
+<br>Note: Start Scanning the environment 3-5 laps and check in mobile phone if the environment is being scanned 
+<br> If the result of ORB-SLAM has accurate localization, save generated binary file by running the command
+```
+rosservice list (to check if /orb_slam2_mono/save_map is available)
+rosservice call /orb_slam2_mono/save_map -f /home/aiudabot/AIUDA_PACKAGES/smith_map.bin
+NOTE: change file name of smith_map.bin to iterate or not overwrite saved map
 ```
