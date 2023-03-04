@@ -1,0 +1,9 @@
+to run postal code assignment
+
+cd AIUDA_PACKAGES/postal_goal_ws/src/postal_goal_ros/python_script/
+
+roslaunch husky_gazebo husky_empty_world.launch
+roslaunch husky_navigation pre_map_load.launch
+rosrun rviz rviz
+rosrun postal_goal_ros send_postal_goal.py
+python3 ayuda_assignment.py
