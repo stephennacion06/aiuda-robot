@@ -1,0 +1,1 @@
+Raspberry Pi Zero MIPI CSI-2 camera connector clip by MyTechGuyRI on Thingiverse: https://www.thingiverse.com/thing:5244702
