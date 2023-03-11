@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/aiudabot/AIUDA_PACKAGES/pose_estimate_ws/devel -DCMAKE_INSTALL_PREFIX=/home/aiudabot/AIUDA_PACKAGES/pose_estimate_ws/install -G Unix Makefiles

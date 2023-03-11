@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/aiudabot/AIUDA_PACKAGES/husky_ros_package/install/setup.sh

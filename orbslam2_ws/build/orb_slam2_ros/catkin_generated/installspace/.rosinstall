@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/aiudabot/AIUDA_PACKAGES/orbslam2_ws/install/setup.sh

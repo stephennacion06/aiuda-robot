@@ -1,0 +1,60 @@
+<launch>
+
+    <!-- ORBSLAM LAUNCH -->
+	<!-- Change to load_map_mapping.launch--> 
+	<include file="$(find orb_slam2_ros)/ros/launch/load_map_mapping.launch" />
+
+	<!-- IMAGE SEGMENTATION PACKAGE -->
+    <include file="$(find ros_deep_learning)/launch/segnet.ros1.launch" />
+	
+	<!-- THROTTLE PACKAGE -->
+     <node pkg="aiuda_throttle_package" name="throttle_control" type="throttle_control.py" />
+
+	<!-- WEB SERVER LAUNCH -->
+	<!-- <node type="web_video_server" name="web_video_server" pkg="web_video_server" />  -->
+
+	<!-- VIDEO SOURCE -->
+    
+     <!-- Change to csi://1 if from camera -->
+	<!-- file:///home/aiudabot/AIUDA_PACKAGES/barangay_video.mp4 -->
+	<!-- <arg name="input" default="csi://0"/> -->
+	<!-- <arg name="input" default="file:///home/aiudabot/AIUDA_PACKAGES/barangay_video_final_2.mp4"/>
+	<arg name="input_width" default="1024"/>
+	<arg name="input_height" default="512"/>
+	<arg name="input_codec" default="h264"/>
+	<arg name="input_loop" default="1"/>
+
+	<include file="$(find ros_deep_learning)/launch/video_source.ros1.launch">
+		<arg name="input" value="$(arg input)"/>
+		<arg name="input_width" value="$(arg input_width)"/>
+		<arg name="input_height" value="$(arg input_height)"/>
+		<arg name="input_codec" value="$(arg input_codec)"/>
+		<arg name="input_loop" value="$(arg input_loop)"/>
+	</include> -->
+
+	<!-- VIDEO OUTPUT -->
+	<!-- <arg name="output" default="rtp://@:1234"/>
+	<arg name="output_codec" default="h264"/>
+	<arg name="output_bitrate" default="0"/>
+
+	<include file="$(find ros_deep_learning)/launch/video_output.ros1.launch">
+		<arg name="topic" value="/video_source/raw"/>
+		<arg name="output" value="$(arg output)"/>
+		<arg name="output_codec" value="$(arg output_codec)"/>
+		<arg name="output_bitrate" value="$(arg output_bitrate)"/>
+	</include> -->
+     
+     
+
+     <!-- <include file="$(find postal_goal_ros)/launch/videoplay.launch" /> -->
+
+
+     <!-- <arg name="map_file" default="/home/aiudabot/orb_catkin_ws/mymap.yaml"/> -->
+     
+     
+     <!-- Run the map server -->
+     <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" /> -->
+
+	
+	
+</launch>

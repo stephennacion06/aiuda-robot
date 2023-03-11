@@ -1,0 +1,47 @@
+1982 end 
+
+2094 start
+
+STARTING Point
+Position(0.053, 0.692, 0.000), Orientation(0.000, 0.000, 0.999, -0.050) = Angle: -3.041
+
+Delivery #1
+Position(6.442, 1.198, 0.000), Orientation(0.000, 0.000, 0.043, 0.999) = Angle: 0.087
+2094-2082
+
+Delivery #2
+Position(11.782, 1.654, 0.000), Orientation(0.000, 0.000, 0.026, 1.000) = Angle: 0.051
+2081-2069
+
+Delivery #3
+Position(16.960, 1.704, 0.000), Orientation(0.000, 0.000, 0.037, 0.999) = Angle: 0.075
+2068-2056
+
+Delivery #4
+Position(21.384, 2.004, 0.000), Orientation(0.000, 0.000, 0.012, 1.000) = Angle: 0.024
+2055-2043
+
+Delivery #5
+Position(26.273, 2.435, 0.000), Orientation(0.000, 0.000, 0.031, 1.000) = Angle: 0.063
+2042-2030
+
+Delivery #6
+Position(30.747, 2.707, 0.000), Orientation(0.000, 0.000, 0.017, 1.000) = Angle: 0.034
+2029-2017
+
+Delivery #7
+Position(35.459, 2.933, 0.000), Orientation(0.000, 0.000, 0.021, 1.000) = Angle: 0.042
+2016-2004
+
+Delivery #8
+Position(39.321, 3.112, 0.000), Orientation(0.000, 0.000, 0.006, 1.000) = Angle: 0.012
+2003-1991
+
+Delivery #9
+Position(43.196, 3.438, 0.000), Orientation(0.000, 0.000, 0.008, 1.000) = Angle: 0.015
+1990-1882
+
+END Point
+Position(48.984, 4.040, 0.000), Orientation(0.000, 0.000, 0.055, 0.999) = Angle: 0.109
+
+

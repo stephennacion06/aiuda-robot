@@ -1,0 +1,16 @@
+<launch>
+
+    <!-- ORBSLAM LAUNCH -->
+	<!-- Change to load_map_mapping.launch--> 
+	<include file="$(find orb_slam2_ros)/ros/launch/load_map_mapping.launch" />
+
+	<!-- IMAGE SEGMENTATION PACKAGE -->
+    <include file="$(find ros_deep_learning)/launch/segnet.ros1.launch" />
+	
+	<!-- THROTTLE PACKAGE - DISPLAY STOP,FORWARD,STEER LEFT, STEER RIGHT TO IMAGE SEGMENTATION -->
+    <node pkg="aiuda_throttle_package" name="throttle_control" type="throttle_control.py" />
+
+	<!-- WEB SERVER LAUNCH - FOR AIUDA APP VIDEO DISPLAY  -->
+	<node type="web_video_server" name="web_video_server" pkg="web_video_server" /> 
+	
+</launch>

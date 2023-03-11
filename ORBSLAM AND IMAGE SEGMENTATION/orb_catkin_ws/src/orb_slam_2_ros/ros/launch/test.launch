@@ -1,0 +1,37 @@
+<launch>
+  <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" output="screen"/>
+
+  <node pkg="nodelet" type="nodelet" name="libuvc_camera" args="load libuvc_camera/driver /nodelet_manager" output="screen">
+    <param name="frame_id" value="camera" />
+    <!-- Parameters used to find the camera -->
+    <param name="vendor" value="9230"/>
+    <param name="product" value="USB 2.0 Camera"/>
+
+   	 <!-- Image size and type -->
+     	<param name="width" value="1024"/>
+    	 <param name="height" value="768"/>
+    	<param name="video_mode" value="mjpeg"/>
+    	<param name="frame_rate" value="30"/>
+   	<param name="camera_frame_id" value="camera"/>
+ 	<remap from="/image_raw" to="/camera/rgb/image_raw" />
+  </node>
+
+ <node name="orb_slam2_mono" pkg="orb_slam2_ros" type="orb_slam2_ros_mono" output="screen">
+       <remap from="/image_raw" to="/camera/rgb/image_raw" />
+       <param name="publish_pointcloud" type="bool" value="true" />
+       <param name="publish_pose" type="bool" value="true" />
+       <param name="localize_only" type="bool" value="false" />
+       <param name="reset_map" type="bool" value="false" />
+
+       <!-- static parameters -->
+       <param name="load_map" type="bool" value="false" />
+       <param name="map_file" type="string" value="map.bin" />
+       <param name="settings_file" type="string" value="$(find orb_slam2_ros)/orb_slam2/config/TUM.yaml" />
+       <param name="voc_file" type="string" value="$(find orb_slam2_ros)/orb_slam2/Vocabulary/ORBvoc.txt" />
+
+       <param name="pointcloud_frame_id" type="string" value="map" />
+       <param name="camera_frame_id" type="string" value="camera_link" />
+       <param name="min_num_kf_in_map" type="int" value="5" />
+  </node>
+</launch>
+

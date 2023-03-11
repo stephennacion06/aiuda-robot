@@ -1,0 +1,7 @@
+<launch>
+
+    <!-- ORBSLAM LAUNCH -->
+	<!-- Change to load_map_mapping.launch--> 
+	<include file="$(find orb_slam2_ros)/ros/launch/load_map_mapping.launch" />
+	
+</launch>

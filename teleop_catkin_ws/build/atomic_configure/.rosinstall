@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/aiudabot/AIUDA_PACKAGES/teleop_catkin_ws/devel/setup.sh

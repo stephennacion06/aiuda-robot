@@ -1,0 +1,8 @@
+prefix=/home/aiudabot/AIUDA_PACKAGES/postal_goal_ws/install
+
+Name: postal_goal_ros
+Description: Description of postal_goal_ros
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

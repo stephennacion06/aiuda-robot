@@ -1,0 +1,6 @@
+devel_space: /home/aiudabot/AIUDA_PACKAGES/orbslam2_ws/devel
+install: false
+install_space: /home/aiudabot/AIUDA_PACKAGES/orbslam2_ws/install
+profile: default
+source_space: /home/aiudabot/AIUDA_PACKAGES/orbslam2_ws/src
+workspace: /home/aiudabot/AIUDA_PACKAGES/orbslam2_ws

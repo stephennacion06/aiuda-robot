@@ -1,0 +1,8 @@
+prefix=/home/aiudabot/AIUDA_PACKAGES/husky_ros_package/install
+
+Name: husky_navigation
+Description: Description of husky_navigation
+Version: 0.4.8
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

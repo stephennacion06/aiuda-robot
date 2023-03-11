@@ -85,12 +85,10 @@ if __name__ == '__main__':
        # Initializes a rospy node to let the SimpleActionClient publish and subscribe
         rospy.init_node('movebase_client_py')
         
-
         while True:
             
             file = open(status_path,"r")
             
-
             for line in file:
                 fields = line.split(",")
                 start_delivery = fields[0]
@@ -135,13 +133,11 @@ if __name__ == '__main__':
                         starting_delivery_sms( contact, name, location, cabinet_slot_list[cabinet_num])
                     
                     except Exception as e: 
-                        print(e)
-                        print("GPS and SMS Not Connected")
+                        rospy.loginfo(e)
+                        rospy.loginfo("GPS and SMS Not Connected")
                     
                     while delivery_done == False:
 
-
-                        
                         #STOP DELIVERY WHEN CANCELLED
                         file = open(status_path,"r")
                         for line in file:
@@ -150,8 +146,6 @@ if __name__ == '__main__':
                         if start_delivery == '0':
                             break
 
-                        
-                        
                         postal_x,postal_y = get_postal_xy(str(postal_address))
                         
                         #for loop here for number of postal_x,y
@@ -175,6 +169,7 @@ if __name__ == '__main__':
                             except Exception as e: 
                                 
                                 print(e)
+                                rospy.loginfo(e)
                                 print("GPS and SMS Not Connected")
                             
                             # Set Waiting Mode to True
@@ -188,9 +183,13 @@ if __name__ == '__main__':
                             speed_file.close()
                             
                             # NOTE: ADD QRCODE SCANNING HERE
-                            # delivery_status = qr_code_main(cabinet_slot_list[cabinet_num])
+                            try:
+                                delivery_status = qr_code_main(cabinet_slot_list[cabinet_num])
                             
-                            delivery_status = "Done"
+                            except Exception as e:
+                                delivery_status = "Failed" 
+                                rospy.loginfo(e)
+                                rospy.loginfo("ERROR RUNNING QR CODE SCANNER")
                             
                             # NOTE: Add database update if Done or Failed and Update the Slot number to 0
                             done_or_fail_update(cabinet_slot_list[cabinet_num], delivery_status)

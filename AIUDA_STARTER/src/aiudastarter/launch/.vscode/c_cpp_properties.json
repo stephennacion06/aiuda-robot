@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/aiudabot/AIUDA_PACKAGES/husky_ros_package/devel/include/**",
+        "/home/aiudabot/AIUDA_PACKAGES/hector_slam_package/devel/include/**",
+        "/home/aiudabot/AIUDA_PACKAGES/video_stream_package/devel/include/**",
+        "/home/aiudabot/turtlebot_ws/devel/include/**",
+        "/home/aiudabot/orb_catkin_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/aiudabot/AIUDA_PACKAGES/AIUDA_STARTER/src/aiudastarter/include/**",
+        "/home/aiudabot/AIUDA_PACKAGES/hector_slam_package/src/hector_slam/hector_geotiff/include/**",
+        "/home/aiudabot/AIUDA_PACKAGES/hector_slam_package/src/hector_slam/hector_map_tools/include/**",
+        "/home/aiudabot/AIUDA_PACKAGES/hector_slam_package/src/hector_slam/hector_mapping/include/**",
+        "/home/aiudabot/AIUDA_PACKAGES/hector_slam_package/src/hector_slam/hector_marker_drawing/include/**",
+        "/home/aiudabot/AIUDA_PACKAGES/husky_ros_package/src/husky/husky_base/include/**",
+        "/home/aiudabot/AIUDA_PACKAGES/postal_goal_ws/src/postal_goal_ros/include/**",
+        "/home/aiudabot/tf_catkin_ws/src/robot_setup_tf/include/**",
+        "/home/aiudabot/AIUDA_PACKAGES/pose_estimate_ws/src/set_point/include/**",
+        "/home/aiudabot/turtlebot_ws/src/turtlebot3_simulations/turtlebot3_fake/include/**",
+        "/home/aiudabot/turtlebot_ws/src/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/home/aiudabot/turtlebot_ws/src/turtlebot3/turtlebot3_slam/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}

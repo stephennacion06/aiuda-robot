@@ -44,7 +44,7 @@
                 
                 <div id="video-container" class="video-panel">
 
-                  <img alt="Orb SLAM Image not Available" id="ros_image" src="http://0.0.0.0:8080/stream?topic=/orb_slam2_mono/debug_image" height="100%" width="100%">
+                  <img alt="Orb SLAM Image not Available" id="ros_image" src="http://localhost:8080/stream?topic=/orb_slam2_mono/debug_image" height="100%" width="100%">
                   
                   <button type="button" onclick="change_display()" class="btn btn-secondary btn-sm change-display-btn">CHANGE DISPLAY</button>
                 
@@ -79,19 +79,46 @@
 
     <!-- Optional JavaScript -->
     <script>
-      window.setInterval('refresh()', 2000); 	
+      window.setInterval('refresh()', 10000); 	
       // Call a function every 10000 milliseconds 
       // (OR 10 seconds).
   
       // Refresh or reload page.
       function refresh() {
-        if (delivery_started){
-          window .location.reload();
-          
-        }
+        window .location.reload();
+        console.log("Refreshing page");
       }
 
       function change_display(){
+      
+            // LOCAL SETUP
+
+    if (document.getElementById("ros_image").src == "http://localhost:8080/stream?topic=/orb_slam2_mono/debug_image") 
+    {
+        document.getElementById("ros_image").src = "http://localhost:8080/stream?topic=/video_source/raw";
+        document.getElementById("ros_image").alt = "Raw Video Not Available"
+    }
+
+    else if (document.getElementById("ros_image").src == "http://localhost:8080/stream?topic=/video_source/raw")
+    {
+         document.getElementById("ros_image").src = "http://localhost:8080/stream?topic=/segnet/overlay";
+          document.getElementById("ros_image").alt = "Image Segmentation Video not Available"
+    }
+
+    else if (document.getElementById("ros_image").src == "http://localhost:8080/stream?topic=/segnet/overlay")
+    {
+         document.getElementById("ros_image").src = "http://localhost:8080/stream?topic=/throttle_image";
+        document.getElementById("ros_image").alt = "Image Segmentation Throttle Video not Available"
+    }
+
+    else if (document.getElementById("ros_image").src == "http://localhost:8080/stream?topic=/throttle_image")
+    {
+         document.getElementById("ros_image").src = "http://localhost:8080/stream?topic=/orb_slam2_mono/debug_image";
+        document.getElementById("ros_image").alt = "Orb SLAM Image not Available"
+    }
+      
+        // ONLINE SETUP
+      /*
       
         if (document.getElementById("ros_image").src == "http://aiudavideo.ngrok.io/stream?topic=/orb_slam2_mono/debug_image") 
         {
@@ -117,7 +144,8 @@
             document.getElementById("ros_image").alt = "Orb SLAM Image not Available"
         }
     
-    
+    */
+
     }
       
 

@@ -1,0 +1,8 @@
+prefix=/home/aiudabot/AIUDA_PACKAGES/arduino_body_serial/devel
+
+Name: aiuda_body_serial
+Description: Description of aiuda_body_serial
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

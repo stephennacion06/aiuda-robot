@@ -1,0 +1,4 @@
+     <launch>
+     <!-- Sending Goal Location -->
+     <node pkg="postal_goal_ros" name="send_postal_goal" type="send_postal_goal.py" />
+     </launch>

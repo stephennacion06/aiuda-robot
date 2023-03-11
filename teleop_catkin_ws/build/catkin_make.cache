@@ -1,0 +1,2 @@
+teleop_twist_keyboard
+-DCATKIN_DEVEL_PREFIX=/home/aiudabot/AIUDA_PACKAGES/teleop_catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/aiudabot/AIUDA_PACKAGES/teleop_catkin_ws/install -G Unix Makefiles

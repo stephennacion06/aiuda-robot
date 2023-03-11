@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Run Mapping Code -->
+     <include file="$(find hector_slam_launch)/launch/mapping_box.launch" />
+     
+     <!-- PointCloud to LaserScan -->
+     <include file="$(find pointcloud_to_laserscan)/launch/no_camera.launch" />
+     
+     <!-- Estimate Pose of Hector SLAM-->
+     <node pkg="set_point" name="set_point" type="hector_pose_estimate.py" />     
+
+</launch>

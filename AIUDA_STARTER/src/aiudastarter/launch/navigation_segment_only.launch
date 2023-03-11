@@ -1,0 +1,9 @@
+<launch>
+
+	<!-- IMAGE SEGMENTATION PACKAGE -->
+    <include file="$(find ros_deep_learning)/launch/segnet.ros1.launch" />
+	
+	<!-- THROTTLE PACKAGE -->
+     <node pkg="aiuda_throttle_package" name="throttle_control" type="throttle_control.py" />
+	
+</launch>

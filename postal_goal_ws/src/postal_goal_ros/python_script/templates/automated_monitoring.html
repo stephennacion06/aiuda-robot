@@ -72,16 +72,14 @@
     <!-- Optional JavaScript -->
     <!-- CONTROL BUTTON JAVASCRIPT -->
     <script>
-      window.setInterval('refresh()', 2000); 	
+      window.setInterval('refresh()', 10000); 	
       // Call a function every 10000 milliseconds 
       // (OR 10 seconds).
   
       // Refresh or reload page.
       function refresh() {
-        if (delivery_started){
-          window .location.reload();
-          
-        }
+        window .location.reload();
+        console.log("Refreshing page");
       }
 
     </script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AIUDA ROBOT APP</title>
+</head>
+<body>
+    <h1>AI-UDA DELIVERY</h1>
+    <h2>Residents of Barangay 743</h2>
+    <h4>Select 12 Residents for Ayuda Distribution:</h4>
+    <form method="POST" action="/">
+        {%for i in range(0, len)%}
+            <input type="checkbox" value= {{qrcode_list[i]}} name="mycheckbox">{{name_list[i]}}<br>
+        {%endfor%}
+        <h4>Status: {{status_delivery}}</h4>
+        <br><br><input type="submit"><br>
+    </form>
+</body>
+</html>

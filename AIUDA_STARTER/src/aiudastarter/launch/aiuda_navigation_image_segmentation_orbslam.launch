@@ -1,0 +1,13 @@
+<launch>
+
+    <!-- ORBSLAM LAUNCH -->
+	<!-- Change to load_map_mapping.launch--> 
+	<include file="$(find orb_slam2_ros)/ros/launch/load_map_mapping.launch" />
+
+	<!-- IMAGE SEGMENTATION PACKAGE -->
+    <include file="$(find ros_deep_learning)/launch/segnet.ros1.launch" />
+	
+	<!-- WEB SERVER LAUNCH -->
+	<node type="web_video_server" name="web_video_server" pkg="web_video_server" /> 
+	
+</launch>

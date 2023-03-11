@@ -1,0 +1,2 @@
+mpu_6050_driver
+-DCATKIN_DEVEL_PREFIX=/home/aiudabot/AIUDA_PACKAGES/mpu_ws/devel -DCMAKE_INSTALL_PREFIX=/home/aiudabot/AIUDA_PACKAGES/mpu_ws/install -G Unix Makefiles

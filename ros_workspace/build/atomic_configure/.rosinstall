@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/aiudabot/AIUDA_PACKAGES/ros_workspace/devel/setup.sh

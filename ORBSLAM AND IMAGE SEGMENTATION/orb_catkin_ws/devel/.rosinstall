@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/aiudabot/orb_catkin_ws/devel/setup.sh

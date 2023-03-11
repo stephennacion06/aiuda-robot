@@ -1,0 +1,8 @@
+prefix=/home/aiudabot/AIUDA_PACKAGES/AIUDA_STARTER/install
+
+Name: aiudastarter
+Description: Description of aiudastarter
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

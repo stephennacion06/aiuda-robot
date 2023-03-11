@@ -1,0 +1,2 @@
+aiudastarter
+-DCATKIN_DEVEL_PREFIX=/home/aiudabot/AIUDA_PACKAGES/AIUDA_STARTER/devel -DCMAKE_INSTALL_PREFIX=/home/aiudabot/AIUDA_PACKAGES/AIUDA_STARTER/install -G Unix Makefiles
