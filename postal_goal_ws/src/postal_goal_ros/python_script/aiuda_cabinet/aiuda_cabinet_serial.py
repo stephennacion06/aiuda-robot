@@ -1,11 +1,27 @@
 import serial
 import os
+from serial.tools import list_ports
+
+device_list = list_ports.comports()
+
+# GPS Vendor ID and Product ID
+aiudaCabinetVid = 1659
+aiudaCabinetPid = 8963
+port = None
+
+for device in device_list:
+    if(device.vid != None or device.pid != None):
+        print("Initialize Aiuda Cabinet connection")
+        if ( device.vid == aiudaCabinetVid ) and ( device.pid == aiudaCabinetPid ):
+            port = device.device
+            print("GPS Port Selected: ", port)
+            osCmd = "sudo chmod 666 " + port
+            os.system(osCmd)
+            print("Sucessful setting " + osCmd)
+            break
 
 try:
-    os.system('sudo chmod 777 /dev/ttyUSB0')
-    
-    relay_module_serial = serial.Serial(port='/dev/ttyUSB0', baudrate=9600)
-    
+    relay_module_serial = serial.Serial(port=port, baudrate=9600)
     serial_ready = True
 except Exception as e: 
     serial_ready = False
@@ -25,10 +41,9 @@ while True:
             # add item to the list
             cabinet_list.append(int(cabinet_slot))
     
-    print(cabinet_list)
-    
     cabinet_list = str(cabinet_list) + '\n'
     
     if serial_ready:
         
+        print(cabinet_list)
         relay_module_serial.write(cabinet_list.encode())
