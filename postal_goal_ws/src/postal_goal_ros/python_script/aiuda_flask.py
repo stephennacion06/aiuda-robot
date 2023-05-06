@@ -48,6 +48,10 @@ speed_file.close()
 # AIUDA CABINET MODULE
 from aiuda_cabinet.aiuda_cabinet_commands import activate_lower_cabinet,activate_upper_cabinet, deactivate_all_cabinet
 delivery_status_path = '/home/aiudabot/AIUDA_PACKAGES/postal_goal_ws/src/postal_goal_ros/python_script/delivery_status.txt'
+f = open(delivery_status_path, "w")
+write_text = "{0},{1}".format(0, 0)
+f.write(write_text)
+f.close()
 
 # DEACTIVATE ALL CABINET BEFORE STARTING
 deactivate_all_cabinet()
@@ -350,4 +354,4 @@ def automated_remote():
 
 if __name__ == '__main__':
 
-    app.run(host='192.168.55.128', debug=False)
+    app.run(host='0.0.0.0', debug=False)
