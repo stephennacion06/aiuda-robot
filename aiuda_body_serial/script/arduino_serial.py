@@ -3,7 +3,8 @@ import time
 import threading
 import os
 
-os.system('sudo chmod 777 /dev/ttyUSB1')
+# TODO: Update Serial port
+os.system('sudo chmod 777 /dev/ttyUSB0')
 
 # Speed and Angle parameters
 angle_path = '/home/aiudabot/AIUDA_PACKAGES/arduino_body_serial/src/aiuda_body_serial/script/angle.txt'
