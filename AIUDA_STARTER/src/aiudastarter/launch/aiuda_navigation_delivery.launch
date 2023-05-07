@@ -12,18 +12,4 @@
      <!-- RVIZ NODE -->
      <node type="rviz" name="rviz" pkg="rviz"  args="-d $(find aiudastarter)/launch/navigation_config.rviz" /> 
 
-     <!-- Estimating Position of Robot -->
-     <node pkg="set_point" name="set_point" type="2d_estimate.py" />
-
-     <!-- Sending postal Coordinates -->
-     <node pkg="postal_goal_ros" name="send_postal_goal" type="send_postal_goal.py" /> 
-
-     <!-- THROTTLE PACKAGE -->
-     <node pkg="aiuda_throttle_package" name="throttle_control" type="throttle_control.py" />
-
-     <!-- IMAGE SEGMENTATION PACKAGE -->
-     <include file="$(find ros_deep_learning)/launch/segnet.ros1.launch" />
-
-     <!-- SEND SERIAL TO AIUDA BODY -->
-     <node pkg="aiuda_body_serial" name="aiuda_send_serial" type="aiuda_send_serial.py" /> 
 </launch>
