@@ -1,0 +1,13 @@
+<launch>	
+    <!-- Estimating Position of Robot -->
+    <node pkg="set_point" name="set_point" type="2d_estimate.py" />
+
+    <!-- Sending postal Coordinates -->
+    <node pkg="postal_goal_ros" name="send_postal_goal" type="send_postal_goal.py" /> 
+	
+	<!-- THROTTLE PACKAGE -->
+    <node pkg="aiuda_throttle_package" name="throttle_control" type="throttle_control.py" />
+
+    <!-- SEND SERIAL TO AIUDA BODY -->
+    <node pkg="aiuda_body_serial" name="aiuda_send_serial" type="aiuda_send_serial.py" /> 
+</launch>
