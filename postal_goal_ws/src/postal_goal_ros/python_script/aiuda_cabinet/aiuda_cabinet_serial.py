@@ -4,7 +4,7 @@ from serial.tools import list_ports
 
 device_list = list_ports.comports()
 
-# GPS Vendor ID and Product ID
+# Cabinet MCU Vendor ID and Product ID
 aiudaCabinetVid = 1659
 aiudaCabinetPid = 8963
 port = None
@@ -14,7 +14,7 @@ for device in device_list:
         print("Initialize Aiuda Cabinet connection")
         if ( device.vid == aiudaCabinetVid ) and ( device.pid == aiudaCabinetPid ):
             port = device.device
-            print("GPS Port Selected: ", port)
+            print("Serial Port Selected: ", port)
             osCmd = "sudo chmod 666 " + port
             os.system(osCmd)
             print("Sucessful setting " + osCmd)
