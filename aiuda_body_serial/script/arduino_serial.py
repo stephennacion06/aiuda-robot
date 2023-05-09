@@ -3,8 +3,25 @@ import time
 import threading
 import os
 
-# TODO: Update Serial port
-os.system('sudo chmod 777 /dev/ttyUSB0')
+from serial.tools import list_ports
+
+device_list = list_ports.comports()
+
+# Aiuda Body MCU Vendor ID and Product ID
+aiudaBodyVid = 6790
+aiudaBodyPid = 29987
+port = None
+
+for device in device_list:
+    if(device.vid != None or device.pid != None):
+        print("Initialize Aiuda Cabinet connection")
+        if ( device.vid == aiudaBodyVid ) and ( device.pid == aiudaBodyPid ):
+            port = device.device
+            print("Serial Port Selected: ", port)
+            osCmd = "sudo chmod 666 " + port
+            os.system(osCmd)
+            print("Sucessful setting " + osCmd)
+            break
 
 # Speed and Angle parameters
 angle_path = '/home/aiudabot/AIUDA_PACKAGES/arduino_body_serial/src/aiuda_body_serial/script/angle.txt'
@@ -14,7 +31,7 @@ prev_speed = 0.0
 
 
 try: 
-    body_port = serial.Serial(port='/dev/ttyUSB1', baudrate=9600)
+    body_port = serial.Serial(port=port, baudrate=115200)
     
     aiuda_body_str = [0,0]
 
@@ -73,5 +90,3 @@ except:
     
     aiuda_body_str = [0,0]
     print('***************************ARDUINO BODY NOT CONNECTED*************************')
-
-
