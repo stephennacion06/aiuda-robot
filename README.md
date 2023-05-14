@@ -329,7 +329,7 @@ roslaunch AIUDA_STARTER/src/aiudastarter/launch/aiuda_navigation_image_segmentat
 roslaunch AIUDA_STARTER/src/aiudastarter/launch/aiuda_navigation_video.launch
 roslaunch AIUDA_STARTER/src/aiudastarter/launch/aiuda_aiudabody_navigation.launch
 python postal_goal_ws/src/postal_goal_ros/python_script/aiuda_cabinet/aiuda_cabinet_serial.py
-python aiuda_body_serial/script/serial_reader.py
+python /home/aiudabot/AIUDA_PACKAGES/arduino_body_serial/src/aiuda_body_serial/script/arduino_serial.py
 ```
 
 
